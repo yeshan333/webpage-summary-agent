@@ -1,0 +1,14 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+logs
+mcp_agent.secrets.yaml
+lnav-0.13.0-beta1
+*.log

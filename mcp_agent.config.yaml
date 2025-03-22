@@ -1,0 +1,25 @@
+$schema: "https://github.com/lastmile-ai/mcp-agent/blob/main/schema/mcp-agent.config.schema.json"
+
+execution_engine: asyncio
+logger:
+  type: file
+  level: info
+  transports: ["console", "file"]
+  path: "mcp-agent.log"
+  progress_display: true
+
+
+mcp:
+  servers:
+    fetch:
+      command: "uvx"
+      args: ["mcp-server-fetch"]
+    filesystem:
+      command: "npx.cmd"
+      args: ["-y", "@modelcontextprotocol/server-filesystem", "."]
+
+openai:
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  # Secrets (API keys, etc.) are stored in an mcp_agent.secrets.yaml file which can be gitignored
+  #  default_model: "o3-mini"
+  default_model: "qwen-turbo"
